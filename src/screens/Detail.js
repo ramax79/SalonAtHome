@@ -1,4 +1,3 @@
-// import {} from '../../src/config/index'
 import React from 'react';
 import Icon from '../Components/Icon';
 import BackIcon from '../Components/BackIcon';
@@ -10,16 +9,14 @@ import {ICON_SIZE, SPACING, width, GLOBAL_STYLE} from '../config/index';
 import {SharedElement} from 'react-navigation-shared-element';
 
 const Detail = ({navigation, route}) => {
-  const {item} = route.params; // получаем товар из маршрута
+  const {item} = route.params; 
   const ref = React.useRef();
   const selectedItemIndex = DATA.findIndex(i => i.id === item.id);
   const mountedAnimated = React.useRef(new Animated.Value(0)).current;
-  const activeIndex = React.useRef(
-    new Animated.Value(selectedItemIndex),
-  ).current; // активный индекс из selectedItemIndex
+  const activeIndex = React.useRef(new Animated.Value(selectedItemIndex)).current; 
   const activeIndexAnimation = React.useRef(
     new Animated.Value(selectedItemIndex),
-  ).current; // анимированный активный индекс из selectedItemIndex
+  ).current; 
 
   const animation = (toValue, delay) =>
     Animated.timing(mountedAnimated, {
@@ -29,7 +26,6 @@ const Detail = ({navigation, route}) => {
       useNativeDriver: true,
     });
 
-  // когда элемент будет смонтироан применим анимацию
   React.useEffect(() => {
     Animated.parallel([
       Animated.timing(activeIndexAnimation, {
@@ -129,5 +125,5 @@ const Detail = ({navigation, route}) => {
 Detail.sharedElements = (route, otherRoute, showing) => {
   return DATA.map(item => `item.${item.id}.icon`);
 };
-// теперь навигатор будет знать какие вещи нужно перемещать с экрана на другой или что будет отображено между экранами
+
 export default Detail;
