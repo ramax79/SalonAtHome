@@ -33,8 +33,7 @@ export default function List({navigation}) {
             <TouchableOpacity
               key={item.id}
               style={{padding: SPACING}}
-              onPress={() => navigation.push('Detail', {item})}>
-              {/* превращаем в общий элемент и передаем его на следующий экран указываем уникальный индентификатор общего элемента id. тот же самый элемент нужно обернуть в окне детали. так же нужно сообщить об этом индетнификаторе React Navigation Shared Element, смотрим на git Static shared elements config. Нужно создать конфигурацию общих элементов sharedElementsConfig. мы создадим статический sharedElements  перед экспортом нашей функции Detail*/}
+              onPress={() => navigation.push('Detail', {item})}>             
               <>
                 <SharedElement id={`item.${item.id}.icon`}>
                   <Icon uri={item.imageUri} />
