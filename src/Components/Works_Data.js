@@ -3,24 +3,13 @@ import {FlatList, View, TouchableOpacity, Text} from 'react-native';
 import {WORKS_DATA} from '../config/travel';
 import {GLOBAL_STYLE, ITEM_WIDTH, SPACING, width} from '../config/index';
 
-// const Works_Data = ({category}) => {
-
-export default function Works_Data(category) {
-  // console.log('category = ' + category.category);
-  // const myJSON = JSON.stringify(category);
-  // console.log('myJSON = ' + myJSON.category);
-  // const works_data = WORKS_DATA.filter(item => item.category == category);
-  // console.log('works_data = ' + works_data);
-  // console.log('длина = ' + works_data.typof());
+export default function Works_Data(category) { 
   return (
     <FlatList
       data={WORKS_DATA}
-      keyExtractor={item => item.key}
-      //   // horizontal
-      snapToInterval={ITEM_WIDTH + SPACING * 2}
-      // contentContainerStyle={{paddingRight: width - ITEM_WIDTH - SPACING * 2}}
-      decelerationRate={'fast'}
-      //   // showsHorizontalScrollIndicator={false}
+      keyExtractor={item => item.key}      
+      snapToInterval={ITEM_WIDTH + SPACING * 2}      
+      decelerationRate={'fast'}      
       style={{
         width: width - SPACING * 2,
         margin: SPACING,
@@ -52,5 +41,3 @@ export default function Works_Data(category) {
     />
   );
 }
-
-// export default Works_Data;
