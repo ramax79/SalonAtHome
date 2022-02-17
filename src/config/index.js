@@ -1,10 +1,7 @@
-// import react from 'react'
 import React from 'react';
 import {Dimensions, StyleSheet} from 'react-native';
 
 const {width, height} = Dimensions.get('window');
-// const ICON_SIZE = 70;
-
 const SPACING = 16;
 const ICON_SIZE = width / 3 - SPACING * 2;
 const ITEM_WIDTH = width * 0.6;
@@ -23,16 +20,11 @@ const GLOBAL_STYLE = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  image: {
-    // width: ICON_SIZE * 0.9,
-    // height: ICON_SIZE * 0.9,
+  image: {    
     width: ICON_SIZE,
     height: ICON_SIZE,
     borderRadius: ICON_SIZE / 2,
-    resizeMode: 'cover',
-    // overflow: 'hidden',
-    // backfaceVisibility: 'hidden',
-    // resizeMode: 'contain',
+    resizeMode: 'cover',    
   },
   itemContainer: {
     width: width * 0.7,
